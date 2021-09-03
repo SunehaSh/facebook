@@ -1,0 +1,22 @@
+@Facebook
+Feature: facebook login feature
+  I want to test the login feature of facebook application
+
+  @login
+  Scenario: login scenario
+    Given I am a user of facebook application
+    When I enter valid username
+    And I enter valid password
+    Then user should be able to loggin successfully
+
+  @Signup
+  Scenario Outline: Signup senario
+    Given I am a user of facebook application
+    When I enter valid <username>
+    And I enter valid <password> 
+    Then I should get logged in successfully
+
+    Examples: 
+      | usernmae  | password |
+      | name1     |    xyz   |
+      | name2     |    abc   |
